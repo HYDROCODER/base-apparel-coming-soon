@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <body>
+    <div class="full-screen-container">
+      <header>
+        <img src="./images/logo.svg" alt="Base Apparel">
+      </header>
+      <div class="img-container">
+        <img src="./images/hero-mobile.jpg" alt="woman wearing base apparel clothes">
+        <img src="./images/hero-desktop.jpg" alt="woman wearing base apparel clothes">
+      </div>
+      <main>
+        <h1>
+          We're 
+          <span class="coming-soon">
+            <br> coming <br> soon
+          </span>
+        </h1>
+        <div class="announcement">
+          Hello fellow shoppers! We're currently building our new
+          fashion store. Add your email below to stay up-to-date with announcements and our launch deals.
+        </div>
+        <form action="#">
+          
+            <input type="email" name="email" id="email" placeholder="Email Address">
+            <img src="./images/icon-error.svg" class="error-icon" alt="exclamation"/>
+          <button type="submit" onclick="checkEmail()"><img src="./images/icon-arrow.svg" alt="left-arrow"></button>
+        </form>
+        <div class="error-message">Please provide a valid email</div>
+      </main>
+    </div>
+<!-- Script for validation: -->
+    <script>
+      function checkEmail(event){
+        let email=document.getElementById('email').value;
+        let regex=/[a-zA-Z0-9]+(@([a-zA-Z0-9]+).com)$/;//regex for checking email address
+        if(!regex.test(email)){
+          // alert('Not a valid email');
+          document.getElementsByClassName('error-icon')[0].style.display="inline";//display the icon
+          document.getElementsByClassName('error-message')[0].style.display="block";//display the message
+          event.preventDefault(); //To prevent page from reloading but I am not sure if this is correct
+        }
+      }
+    </script>
+  </body>
+</html>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <!-- <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head> -->
+    <!-- <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </p>
+    </footer> -->
